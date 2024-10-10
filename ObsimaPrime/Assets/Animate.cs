@@ -14,6 +14,11 @@ public class Animate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerAnimator.SetFloat("Walk", Input.GetAxis("Vertical"));
+        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        float speed = Mathf.Sqrt(verticalInput * verticalInput + horizontalInput * horizontalInput);
+
+        PlayerAnimator.SetFloat("Walk", speed);
     }
 }
