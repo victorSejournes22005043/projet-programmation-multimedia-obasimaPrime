@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject enemy;
-    public float speed;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject player; // Le joueur à suivre
+    public float speed = 2f; // Vitesse de déplacement
 
-    // Update is called once per frame
+    // Update est appelé à chaque frame
     void Update()
     {
-        enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, speed);
+        if (player != null)
+        {
+            // Calcule la direction vers le joueur
+            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+
+            // Déplace l'ennemi vers le joueur
+            transform.position += directionToPlayer * speed * Time.deltaTime;
+        }
     }
 }
