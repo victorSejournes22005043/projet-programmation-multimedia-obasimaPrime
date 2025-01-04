@@ -8,10 +8,6 @@ public class GameManager : MonoBehaviour
 
     public bool HasKey = false; // Le jouer possède une clé
 
-    private void start()
-    {
-        totalCoins = 0;
-    }
 
     private void Awake()
     {
@@ -38,6 +34,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Accesseur pour obtenir le nombre total de pièces
+
+    public void ResetCoins()
+    {
+        totalCoins = 0;
+    }
+
     public int GetTotalCoins()
     {
         return totalCoins;

@@ -7,5 +7,6 @@ public class DeathHandler : MonoBehaviour
     {
         // Charger la scène de l'écran de défaite
         SceneManager.LoadScene("DeathScreen");
+        GameManager.instance.ResetCoins();
     }
 }
