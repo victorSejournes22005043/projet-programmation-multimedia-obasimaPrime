@@ -3,8 +3,7 @@ using System.Collections; // Nécessaire pour utiliser les coroutines
 
 public class Chest : MonoBehaviour
 {
-    public GameObject coinPrefab; // L'objet qui apparaît (par ex. une pièce)
-    public Transform spawnPoint; // Point où l'objet apparaîtra
+    public GameObject spawnObject; // L'objet qui apparaît (par ex. une pièce)
     private Animator animator;   // L'Animator du coffre
     private bool isOpen = false;
 
@@ -38,9 +37,9 @@ public class Chest : MonoBehaviour
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
         // Apparition de l'objet (par ex. une pièce)
-        if (coinPrefab != null && spawnPoint != null)
+        if (spawnObject != null)
         {
-            coinPrefab.transform.position = spawnPoint.position;
+            spawnObject.SetActive(true);
         }
     }
 }
