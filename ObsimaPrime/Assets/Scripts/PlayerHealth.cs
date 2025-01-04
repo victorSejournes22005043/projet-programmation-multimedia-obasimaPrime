@@ -21,11 +21,22 @@ public class PlayerHealth : MonoBehaviour
         {
             takeDamage(20);
         }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     public void takeDamage(int damage)
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
+    }
+
+    void Die()
+    {
+        Debug.Log("Le personnage est mort !");
+        FindObjectOfType<DeathHandler>().TriggerDeathScreen();
     }
 }
