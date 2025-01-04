@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class FloatEffect : MonoBehaviour
+public class Trophy : MonoBehaviour
 {
     public float floatAmplitude = 0.5f; // Amplitude du flottement
     public float floatSpeed = 2f; // Vitesse du flottement
@@ -21,5 +22,14 @@ public class FloatEffect : MonoBehaviour
         // Faire flotter l'objet autour de la position de référence
         float newY = baseY + Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player")) // Assure-toi que ton joueur a le tag "Player"
+        {
+            // Charger la scène de victoire
+            SceneManager.LoadScene("VictoryScreen");
+        }
     }
 }

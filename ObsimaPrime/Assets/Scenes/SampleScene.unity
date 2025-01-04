@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -7442,6 +7442,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophy
       objectReference: {fileID: 0}
+    - target: {fileID: 1511123188174675106, guid: 2380000570aab13419d26ff2bfde4a2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8930711877912157808, guid: 2380000570aab13419d26ff2bfde4a2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.007440567
@@ -7485,7 +7489,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1511123188174675106, guid: 2380000570aab13419d26ff2bfde4a2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6804109762405231596}
   m_SourcePrefab: {fileID: 100100000, guid: 2380000570aab13419d26ff2bfde4a2a, type: 3}
 --- !u!1001 &2547821518354116982
 PrefabInstance:
@@ -7675,6 +7682,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8930711877912157808, guid: 2380000570aab13419d26ff2bfde4a2a, type: 3}
   m_PrefabInstance: {fileID: 233756101870367527}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &6804109762405231596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804109762405231592}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &7992126629923370530
 PrefabInstance:
   m_ObjectHideFlags: 0

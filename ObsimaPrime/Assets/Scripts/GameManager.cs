@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 
     public bool HasKey = false; // Le jouer possède une clé
 
+    private void start()
+    {
+        totalCoins = 0;
+    }
 
     private void Awake()
     {
