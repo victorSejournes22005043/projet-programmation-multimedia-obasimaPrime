@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHUD : MonoBehaviour
 {
     public HealthBar healthbar;
+    public TMP_Text coinText;
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -14,18 +17,14 @@ public class PlayerHealth : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            takeDamage(20);
-        }
-
         if (currentHealth <= 0)
         {
             Die();
         }
+
+        coinText.text = "x " + GameManager.instance.GetTotalCoins().ToString();
     }
 
     public void takeDamage(int damage)
