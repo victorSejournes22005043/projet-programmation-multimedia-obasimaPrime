@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BaltrouDeFeu : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class BaltrouDeFeu : MonoBehaviour
         {
             StartCoroutine(PerformFireAttack());
         }
+
     }
 
     private IEnumerator PerformFireAttack()

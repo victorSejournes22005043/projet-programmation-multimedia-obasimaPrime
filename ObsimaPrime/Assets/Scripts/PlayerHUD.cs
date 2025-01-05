@@ -54,7 +54,4 @@ public class PlayerHUD : MonoBehaviour
             Debug.Log("Trigger avec Lava : Santé mise à 0 !");
         }
     }
-
-
-
 }
