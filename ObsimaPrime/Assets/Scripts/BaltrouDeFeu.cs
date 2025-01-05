@@ -5,18 +5,17 @@ using TMPro;
 
 public class BaltrouDeFeu : MonoBehaviour
 {
-    public ParticleSystem fireParticles;  // Les particules de feu
-    public float damage = 10f;           // Dégâts infligés
-    public float radius = 5f;            // Rayon de l'AOE
-    public float cooldown = 2f;          // Temps de recharge
-    public float particleDuration = 1f;  // Durée pendant laquelle les particules restent actives
+    public ParticleSystem fireParticles;  
+    public float damage = 10f;           
+    public float radius = 5f;            
+    public float cooldown = 2f;          
+    public float particleDuration = 1f;  
 
-    private bool canAttack = false;      // Vérifie si l'attaque est disponible
-    private bool hasPickedUpPepper = false; // Vérifie si le joueur a ramassé le piment
+    private bool canAttack = false;      
+    private bool hasPickedUpPepper = false; 
 
     void Update()
     {
-        // Vérifie si le joueur appuie sur une touche pour attaquer (touche "F") et si le piment a été ramassé
         if (Input.GetKeyDown(KeyCode.F) && canAttack && hasPickedUpPepper)
         {
             StartCoroutine(PerformFireAttack());
@@ -48,7 +47,6 @@ public class BaltrouDeFeu : MonoBehaviour
             Enemy enemyScript = hitCollider.GetComponent<Enemy>();
             if (enemyScript != null)
             {
-                // Inflige des dégâts à l'ennemi
                 enemyScript.TakeDamage(damage);
             }
         }
@@ -72,8 +70,8 @@ public class BaltrouDeFeu : MonoBehaviour
     // Fonction pour ramasser le piment
     public void PickUpPepper()
     {
-        hasPickedUpPepper = true; // Le joueur peut maintenant attaquer
-        canAttack = true; // Active l'attaque dès que le piment est ramassé
+        hasPickedUpPepper = true; 
+        canAttack = true; 
         Debug.Log("Piment ramassé ! Tu peux maintenant cracher du feu !");
     }
 

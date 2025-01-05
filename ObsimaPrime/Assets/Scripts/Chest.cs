@@ -1,15 +1,14 @@
 using UnityEngine;
-using System.Collections; // Nécessaire pour utiliser les coroutines
+using System.Collections;
 
 public class Chest : MonoBehaviour
 {
-    public GameObject spawnObject; // L'objet qui apparaît (par ex. une pièce)
-    private Animator animator;   // L'Animator du coffre
+    public GameObject spawnObject; 
+    private Animator animator;
     private bool isOpen = false;
 
     private void Start()
     {
-        // Récupérer l'Animator attaché au coffre
         animator = GetComponent<Animator>();
     }
 
@@ -18,7 +17,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.instance.HasKey && !isOpen)
         {
             Debug.Log("Coffre ouvert !");
-            StartCoroutine(OpenChestCoroutine()); // Lancer la coroutine
+            StartCoroutine(OpenChestCoroutine());
         }
         else if (other.CompareTag("Player") && !GameManager.instance.HasKey)
         {
