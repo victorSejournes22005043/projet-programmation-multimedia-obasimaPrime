@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathScreenUI : MonoBehaviour
+public class DeathAndVictoryScreenUI : MonoBehaviour
 {
     void Start()
     {
         // Afficher le curseur et libérer le contrôle de la souris
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
+        GameManager.instance.ResetCoins();
+        GameManager.instance.HasKey = false;
     }
 
     public void RetryGame()

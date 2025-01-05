@@ -10,6 +10,5 @@ public class VictoryScreen : MonoBehaviour
     {
         // Mettre à jour le texte avec le nombre total de pièces
         coinText.text = "Total Coins: " + GameManager.instance.GetTotalCoins().ToString();
-        GameManager.instance.ResetCoins();
     }
 }
