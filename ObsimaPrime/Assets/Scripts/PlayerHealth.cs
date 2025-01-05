@@ -39,4 +39,23 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Le personnage est mort !");
         FindObjectOfType<DeathHandler>().TriggerDeathScreen();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger détecté avec : " + other.gameObject.name);
+        if (other.gameObject.name == "Lava")
+        {
+            currentHealth = 0;
+            healthbar.SetHealth(currentHealth);
+            Debug.Log("Trigger avec Lava : Santé mise à 0 !");
+        }
+        else if (other.gameObject.name == "Enemy")
+        {
+            takeDamage(20);
+            Debug.Log("Trigger avec Lava : Santé mise à 0 !");
+        }
+    }
+
+
+
 }
