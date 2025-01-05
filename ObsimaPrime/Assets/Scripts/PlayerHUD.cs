@@ -42,13 +42,13 @@ public class PlayerHUD : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger détecté avec : " + other.gameObject.name);
-        if (other.gameObject.name == "Lava")
+        if (other.gameObject.CompareTag("Lava"))
         {
             currentHealth = 0;
             healthbar.SetHealth(currentHealth);
             Debug.Log("Trigger avec Lava : Santé mise à 0 !");
         }
-        else if (other.gameObject.name == "Enemy")
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             takeDamage(20);
             Debug.Log("Trigger avec Lava : Santé mise à 0 !");

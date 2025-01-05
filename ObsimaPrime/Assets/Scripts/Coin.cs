@@ -4,17 +4,16 @@ public class Coin : MonoBehaviour
 {
     public AudioClip pickupSound;
 
-    public int coinValue = 1; // Valeur de la pièce (par défaut 1)
+    public int coinValue = 1;
 
-    // Détecter les collisions avec le joueur
     private void OnTriggerEnter(Collider other)
     {
-        // Vérifie si c'est le joueur qui touche la pièce
+        // Check si c'est le joueur qui touche la pièce
         if (other.CompareTag("Player"))
         {
-            // Ajoute la valeur de la pièce au score
             GameManager.instance.AddCoins(coinValue);
 
+            // Joue le bruit de pièce
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
 
             // Détruit la pièce après la récupération

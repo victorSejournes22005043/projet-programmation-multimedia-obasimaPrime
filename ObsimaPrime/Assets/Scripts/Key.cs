@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    public float floatSpeed = 1f; // Vitesse de montée/descente
-    public float floatHeight = 0.5f; // Amplitude du flottement
+    public AudioClip pickupSound;
+
+    public float floatSpeed = 1f;
+    public float floatHeight = 0.5f;
 
     private Vector3 startPosition;
 
@@ -23,8 +25,11 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Clé récupérée !");
+            Debug.Log("Clé récupéré par le joueur");
             GameManager.instance.HasKey = true; // Indiquer que le joueur a la clé
+
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+
             Destroy(gameObject); // Supprimer la clé
         }
     }
